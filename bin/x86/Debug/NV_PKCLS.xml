@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idNV" type="xs:short" minOccurs="0" />
+              <xs:element name="idPKL" type="xs:short" minOccurs="0" />
+              <xs:element name="tenNV" type="xs:string" minOccurs="0" />
+              <xs:element name="gtNV" type="xs:string" minOccurs="0" />
+              <xs:element name="tenPB" type="xs:string" minOccurs="0" />
+              <xs:element name="tuoiNV" type="xs:short" minOccurs="0" />
+              <xs:element name="chucvu" type="xs:string" minOccurs="0" />
+              <xs:element name="kL" type="xs:string" minOccurs="0" />
+              <xs:element name="ghichu" type="xs:string" minOccurs="0" />
+              <xs:element name="ngaynhap" type="xs:string" minOccurs="0" />
+              <xs:element name="chieucao" type="xs:short" minOccurs="0" />
+              <xs:element name="cannang" type="xs:short" minOccurs="0" />
+              <xs:element name="BMI" type="xs:short" minOccurs="0" />
+              <xs:element name="mach" type="xs:string" minOccurs="0" />
+              <xs:element name="huyetAp" type="xs:string" minOccurs="0" />
+              <xs:element name="theLuc" type="xs:string" minOccurs="0" />
+              <xs:element name="noiK" type="xs:string" minOccurs="0" />
+              <xs:element name="ngoaiK" type="xs:string" minOccurs="0" />
+              <xs:element name="phuK" type="xs:string" minOccurs="0" />
+              <xs:element name="mat" type="xs:string" minOccurs="0" />
+              <xs:element name="TMH" type="xs:string" minOccurs="0" />
+              <xs:element name="daLieu" type="xs:string" minOccurs="0" />
+              <xs:element name="RHM" type="xs:string" minOccurs="0" />
+              <xs:element name="ptTBMau" type="xs:string" minOccurs="0" />
+              <xs:element name="ptNTieu" type="xs:string" minOccurs="0" />
+              <xs:element name="duongHuyet" type="xs:string" minOccurs="0" />
+              <xs:element name="sgot" type="xs:string" minOccurs="0" />
+              <xs:element name="sgpt" type="xs:string" minOccurs="0" />
+              <xs:element name="ure" type="xs:string" minOccurs="0" />
+              <xs:element name="creatinin" type="xs:string" minOccurs="0" />
+              <xs:element name="xQuang" type="xs:string" minOccurs="0" />
+              <xs:element name="sieuAm" type="xs:string" minOccurs="0" />
+              <xs:element name="plSK" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

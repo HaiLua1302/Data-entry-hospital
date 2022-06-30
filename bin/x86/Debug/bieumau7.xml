@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idBM" type="xs:short" minOccurs="0" />
+              <xs:element name="tenBenh" type="xs:string" minOccurs="0" />
+              <xs:element name="ngaythang" type="xs:string" minOccurs="0" />
+              <xs:element name="sl_kham" type="xs:short" minOccurs="0" />
+              <xs:element name="sln_kham" type="xs:short" minOccurs="0" />
+              <xs:element name="sl_cd" type="xs:short" minOccurs="0" />
+              <xs:element name="sln_cd" type="xs:short" minOccurs="0" />
+              <xs:element name="sl_gd" type="xs:short" minOccurs="0" />
+              <xs:element name="sln_gd" type="xs:short" minOccurs="0" />
+              <xs:element name="sl_5" type="xs:short" minOccurs="0" />
+              <xs:element name="sln_5" type="xs:short" minOccurs="0" />
+              <xs:element name="sl_5_31" type="xs:short" minOccurs="0" />
+              <xs:element name="sln_5_31" type="xs:short" minOccurs="0" />
+              <xs:element name="sl_31" type="xs:short" minOccurs="0" />
+              <xs:element name="sln_31" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

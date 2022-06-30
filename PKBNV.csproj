@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1C8E375-7C5E-4272-BEC9-5399128A071D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PKBNV</RootNamespace>
+    <AssemblyName>PKBNV</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logoBV.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.2584.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>packages\Devart.Data.5.0.2584\lib\netstandard2.0\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql, Version=7.20.1792.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>packages\Devart.Data.PostgreSql.7.20.1792\lib\netstandard2.0\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Charts.Design, Version=14.0.0.15, Culture=neutral, PublicKeyToken=2c9ff1fddc42653c, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.Charts.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Charts, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.DotNetBar.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout.Design, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.DotNetBar.Layout.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.15, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=14.0.0.15, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design, Version=14.0.0.15, Culture=neutral, PublicKeyToken=1fea3f5d8d482bff, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=14.0.0.15, Culture=neutral, PublicKeyToken=cfcbd7476b2389d1, processorArchitecture=MSIL">
+      <HintPath>packages\NgDotNetBar.1.0.2\lib\net472\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Diagnostics.PerformanceCounter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.PerformanceCounter.4.5.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bieumau1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bieumau1.Designer.cs">
+      <DependentUpon>bieumau1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bieumau2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bieumau2.Designer.cs">
+      <DependentUpon>bieumau2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bieumau3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bieumau3.Designer.cs">
+      <DependentUpon>bieumau3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bieumau4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bieumau4.Designer.cs">
+      <DependentUpon>bieumau4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bieumau5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bieumau5.Designer.cs">
+      <DependentUpon>bieumau5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bieumau6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bieumau6.Designer.cs">
+      <DependentUpon>bieumau6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bieumau7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bieumau7.Designer.cs">
+      <DependentUpon>bieumau7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bieumau8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bieumau8.Designer.cs">
+      <DependentUpon>bieumau8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BUS\bieumau1BUS.cs" />
+    <Compile Include="BUS\bieumau2BUS.cs" />
+    <Compile Include="BUS\bieumau3BUS.cs" />
+    <Compile Include="BUS\bieumau4BUS.cs" />
+    <Compile Include="BUS\bieumau5BUS.cs" />
+    <Compile Include="BUS\bieumau7BUS.cs" />
+    <Compile Include="BUS\bieumau8BUS.cs" />
+    <Compile Include="BUS\chucdanhBUS.cs" />
+    <Compile Include="BUS\kqBUS.cs" />
+    <Compile Include="BUS\nguoiLDBUS.cs" />
+    <Compile Include="BUS\nhanvienBUS.cs" />
+    <Compile Include="BUS\nhombenhBUS.cs" />
+    <Compile Include="BUS\pbBUS.cs" />
+    <Compile Include="BUS\timkiemBUS.cs" />
+    <Compile Include="CLASS\benhnhan.cs" />
+    <Compile Include="CLASS\bieumau1.cs" />
+    <Compile Include="CLASS\bieumau2.cs" />
+    <Compile Include="CLASS\bieumau3.cs" />
+    <Compile Include="CLASS\bieumau4.cs" />
+    <Compile Include="CLASS\bieumau7.cs" />
+    <Compile Include="CLASS\bieumau8.cs" />
+    <Compile Include="CLASS\chucdanh.cs" />
+    <Compile Include="CLASS\kqKTCLS.cs" />
+    <Compile Include="CLASS\nguoiLD.cs" />
+    <Compile Include="CLASS\nhanvien.cs" />
+    <Compile Include="CLASS\nhombenh.cs" />
+    <Compile Include="CLASS\phongban.cs" />
+    <Compile Include="DB\bieumau1DB.cs" />
+    <Compile Include="DB\bieumau2DB.cs" />
+    <Compile Include="DB\bieumau3DB.cs" />
+    <Compile Include="DB\bieumau4DB.cs" />
+    <Compile Include="DB\bieumau5DB.cs" />
+    <Compile Include="DB\bieumau7DB.cs" />
+    <Compile Include="DB\bieumau8DB.cs" />
+    <Compile Include="DB\chucdanhDB.cs" />
+    <Compile Include="DB\nguoiLDDB.cs" />
+    <Compile Include="DB\NhanVienDB.cs" />
+    <Compile Include="DB\nhombenhDB.cs" />
+    <Compile Include="DB\pbDB.cs" />
+    <Compile Include="DB\pkbnvDB.cs" />
+    <Compile Include="DB\timkiemDB.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\getDB.cs" />
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nguoiLD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nguoiLD.Designer.cs">
+      <DependentUpon>nguoiLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRINTVIEW\phieuCLS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRINTVIEW\phieuCLS.Designer.cs">
+      <DependentUpon>phieuCLS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qlChucDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qlChucDanh.Designer.cs">
+      <DependentUpon>qlChucDanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qlKhoaPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qlKhoaPhong.Designer.cs">
+      <DependentUpon>qlKhoaPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qlBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qlBenh.Designer.cs">
+      <DependentUpon>qlBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\bieumau2.cs">
+      <DependentUpon>bieumau2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="report\bieumau1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bieumau1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\bieumau3.cs">
+      <DependentUpon>bieumau3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="report\bieumau4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bieumau4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\bieumau5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bieumau5.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\bieumau6.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bieumau6.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\bieumau7.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bieumau7.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\bieumau8.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bieumau8.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\nv_pkbls.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nv_pkbls.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="bieumau1.resx">
+      <DependentUpon>bieumau1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bieumau2.resx">
+      <DependentUpon>bieumau2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bieumau3.resx">
+      <DependentUpon>bieumau3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bieumau4.resx">
+      <DependentUpon>bieumau4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bieumau5.resx">
+      <DependentUpon>bieumau5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bieumau6.resx">
+      <DependentUpon>bieumau6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bieumau7.resx">
+      <DependentUpon>bieumau7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bieumau8.resx">
+      <DependentUpon>bieumau8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nguoiLD.resx">
+      <DependentUpon>nguoiLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRINTVIEW\phieuCLS.resx">
+      <DependentUpon>phieuCLS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="qlChucDanh.resx">
+      <DependentUpon>qlChucDanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qlKhoaPhong.resx">
+      <DependentUpon>qlKhoaPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qlBenh.resx">
+      <DependentUpon>qlBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\bieumau2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bieumau2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\bieumau1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bieumau1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\bieumau3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bieumau3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\bieumau4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bieumau4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\bieumau5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bieumau5.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\bieumau6.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bieumau6.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\bieumau7.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bieumau7.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\bieumau8.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bieumau8.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\nv_pkbls.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>nv_pkbls.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\PKBNV.CLASS.kqKTCLS.datasource" />
+    <None Include="Properties\DataSources\PKBNV.CLASS.nhanvien.datasource" />
+    <None Include="Properties\DataSources\PKBNV.CLASS.phongban.datasource" />
+    <None Include="Properties\DataSources\PKBNV.PRINTDETAIL.bieumau9_detail.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\ghichep1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\tips-for-keeping-your-design-files-organized.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logoBV.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
